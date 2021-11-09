@@ -1,0 +1,13 @@
+
+*.d
+*.pro
+*.o
+*.dep
+*.ioc
+*.sct
+*.user
+*.htm
+*.lnp
+*.axf
+*.lst
+*.crf
