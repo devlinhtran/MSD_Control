@@ -1,4 +1,4 @@
-# Smart H-bridge
+# MSD_CONTROLER
 # Features
 1. Working environment:
     + DC Vol: 10-40V
