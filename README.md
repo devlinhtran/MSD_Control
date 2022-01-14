@@ -44,7 +44,7 @@ The motor will run follow the signal of Pulse and Direct Pin.
         - velocity: max speed motor run (rad/s)
         - acer: accelerate of motor (rad/s)
         - msdChanel: motor index.
-  + Example:
+   + Example:
         - The motor rotate 100 revolution => 100*6.28319 = 628.319 rad => position = 628.319 (rad).
         - Max speed is 100 rad/s => velocity = 100 (rad/s).
         - Accelrate is 10 rad/s => acer = 10(rad/s)
