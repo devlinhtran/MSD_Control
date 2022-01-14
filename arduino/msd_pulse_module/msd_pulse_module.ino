@@ -4,8 +4,6 @@
 #define MSD_DT 0.001      //(s)
 #define MSD_PPR 200.0     //This number is defined in software (Pulse/Row).
 #define MSD_NUMBER  5     // Number of Motor want to control.
-#define MSD_PULSE_DISTANCE 6.28318
-
 
 
 class MSD_OBJ
@@ -248,26 +246,8 @@ double MSD_OBJ::MSD_GetVelocityCurrent(char msdChanel) {
 }
 void MSD_OBJ::MSD_Run(void)
 {
-  static unsigned char mini_step = 0;
-  switch (mini_step) {
-    case 0:
-      if (msd[0].aStop == 1)
-      {
-        MSD_SetValue(6.28318 * 2000, 150, 10, 0);
-        MSD_StartAll();
-        mini_step = 1;
-      }
-      break;
-    case 1:
-      if (msd[0].aStop == 1)
-      {
-        MSD_SetValue(MSD_PULSE_DISTANCE * -2000, 50, 5, 0);
-        MSD_StartAll();
-        mini_step = 0;
-      }
-      break;
-
-  }
+    MSD_SetValue(6.28318 * 2000, 150, 10, 0);
+    MSD_StartAll();
 }
 
 
