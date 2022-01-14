@@ -32,7 +32,7 @@ The motor will run follow the signal of Pulse and Direct Pin.
    + Attach Direct and Pulse pin for per motor.
    + Use MSD_AttachPin(char motorIndex, char dirPin, char pulsePin) function.
    + Example:
-        Set up Motor index 0 with Direct pin is 2 and Pulse pin is 3
+        - Set up Motor index 0 with Direct pin is 2 and Pulse pin is 3
         => MSD_AttachPin(0, 2, 3);
 ### Step 3:
    + Init configure for previously attached pín and Init timer interrupt.
@@ -40,15 +40,15 @@ The motor will run follow the signal of Pulse and Direct Pin.
 ### Step 4:
    + Set the value that the motor will run.
    + Use MSD_SetValue(double position, double velocity, double acer, char msdChanel) function:
-        position: The distance motor run (rad)
-        velocity: max speed motor run (rad/s)
-        acer: accelerate of motor (rad/s)
-        msdChanel: motor index.
+        - position: The distance motor run (rad)
+        - velocity: max speed motor run (rad/s)
+        - acer: accelerate of motor (rad/s)
+        - msdChanel: motor index.
   + Example
-        The motor rotate 100 revolution => 100*6.28319 = 628.319 rad => position = 628.319 (rad).
-        Max speed is 100 rad/s => velocity = 100 (rad/s).
-        Accelrate is 10 rad/s => acer = 10(rad/s)
-        Motor index is 0
+        - The motor rotate 100 revolution => 100*6.28319 = 628.319 rad => position = 628.319 (rad).
+        - Max speed is 100 rad/s => velocity = 100 (rad/s).
+        - Accelrate is 10 rad/s => acer = 10(rad/s)
+        - Motor index is 0
         => MSD_SetValue(628.319, 100, 10, 0);
 ### Step 5:
   + Run motor
