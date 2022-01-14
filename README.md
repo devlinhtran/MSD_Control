@@ -1,43 +1,43 @@
 # MSD_CONTROLER
 # Features
-1. Working environment:
+## 1. Working environment:
    + DC Vol: 10-40V
    + Continous Current: 20A
-2. Control method:
+## 2. Control method:
    + Pwm/Dir
    + Analog (Protentionmeter)/Dir
    + Uart Network
    + Rc Signal.
-3. Protecttion:
+## 3. Protecttion:
    + Over Voltage, Under  Voltage , Over Temperature. 
    +  Short circuit, Over current.
-4. Advanced feature:
+## 4. Advanced feature:
    + Current Limit as Switch Limit (don't accept go more to that Dir when the current touch to the Limit). Setting by hardware.
    + Accept a Acceleration setting by hardware.
    + Bidirectional power supply input (I am note sure, need to test with height load)
 # Related tutorials and Notice
    +RC tutorial: https://www.youtube.com/watch?v=utTi0awlUzg
 # Firmware
-1. Control motor by Arduino board:
+## 1. Control motor by Arduino board:
 Use "msd_pulse_module.ino" to control motor.
 This code used for controlling multiple motors with arduino board.
 The motor will run follow the signal of Pulse and Direct Pin.
    + The Direct Pin indicate the rotation direction that rotating clockwise or counterclockwise.
    + The motor will move a radian with per rising edge on Pulse pin.
-Step 1:
+### Step 1:
    + Define parameter of driver.
    + MSD_NUMBER: Number of motor need control.
    + MSD_PPR: Number pulse per revolution. Set the parameter same the value of the motor driver.
-Step 2:
+### Step 2:
    + Attach Direct and Pulse pin for per motor.
    + Use MSD_AttachPin(char motorIndex, char dirPin, char pulsePin) function.
    + Example:
         Set up Motor index 0 with Direct pin is 2 and Pulse pin is 3
         => MSD_AttachPin(0, 2, 3);
-Step 3:
+### Step 3:
    + Init configure for previously attached pín and Init timer interrupt.
    + Use MSD_Init();
-Step 4:
+### Step 4:
    + Set the value that the motor will run.
    + Use MSD_SetValue(double position, double velocity, double acer, char msdChanel) function:
         position: The distance motor run (rad)
@@ -50,7 +50,7 @@ Step 4:
         Accelrate is 10 rad/s => acer = 10(rad/s)
         Motor index is 0
         => MSD_SetValue(628.319, 100, 10, 0);
-Step 5:
+### Step 5:
   + Run motor
   + Use MSD_StartAll() function if you want to run all motor.
   + Use MSD_StartAt(char index) function if you just want to run a motor.
